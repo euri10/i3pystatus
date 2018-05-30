@@ -13,9 +13,7 @@ class ClassFinder:
     def predicate_factory(self, module):
         def predicate(obj):
             return (
-                inspect.isclass(obj) and
-                issubclass(obj, self.baseclass) and
-                obj.__module__ == module.__name__
+                inspect.isclass(obj) and issubclass(obj, self.baseclass) and obj.__module__ == module.__name__
             )
 
         return predicate
